@@ -1,5 +1,6 @@
-import CartWidget from "../CartWidget/CartWidget"
-import logo from '../../assets/logo.jpeg'
+import { Link } from "react-router-dom";
+import logo from '../../assets/logo.jpeg';
+import CartWidget from "../CartWidget/CartWidget";
 
 function Navbar() {
 
@@ -9,13 +10,10 @@ function Navbar() {
                 <div className="nav-brand">
                     <img src={logo} alt="Logo" />
                 </div>
-                <ul>
-                    <li><a href="#">Libros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                    <li><a href="#"><CartWidget /></a></li>
-                </ul>
-
+                <Link to="catalogo">Catalogo</Link>
+                <Link to="contacto">Contacto</Link>
+                <Link to="ayuda">Ayuda</Link>
+                <Link to="cart"><CartWidget /></Link>
             </nav>
         </div>
     </>)
