@@ -2,6 +2,7 @@ import { GrCart } from "react-icons/gr";
 
 function CartWidget() {
 
+
     return (<>
         <GrCart />
     </>)

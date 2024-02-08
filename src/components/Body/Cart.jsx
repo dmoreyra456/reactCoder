@@ -1,8 +1,21 @@
-function Cart() {
+import { useEffect, useState } from "react";
+import Libro from "../Libros/Libro";
+import { verCarrito } from '../CartWidget/CartManager'
+
+const Cart = () => {
+    const [libros, setLibros] = useState([]);
+
+    useEffect(() => {
+        setLibros(verCarrito());
+    }, []);
+
+    const handleUpdate = () => {
+        setLibros(verCarrito());
+    }
 
     return (<>
         <h1>Carrito</h1>
-        <section>Este es el carrito de compra , aca tenés que llenar los libros piolas más que increible que seguro vas a querer comprar.</section>
+        {libros.map(l => <Libro key={l.id} libro={l} carrito={true} update={handleUpdate} />)}
     </>)
 }
 
